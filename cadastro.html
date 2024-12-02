@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page:</title>
+        <link rel="stylesheet" href="stylesheets/loginstyle.css">
+        <link rel="shortcut icon" href="Img/GUII.png" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Campo Minado - Zona 401</h1> 
+        </header>
+        
+        <div class="formDiv" style="left:42vw;position:relative;">
+            <h1>Cadastro</h1>
+
+            <!-- Div para exibir mensagens de erro -->
+            <div id="error-message" style="color: red; font-weight: bold;"></div>
+
+            <form id="signin" method="POST">
+                <label for="nomec">Nome Completo</label><br>
+                <input type="text" id="nomec" name="nomec" maxlength="39" required><br>
+            
+                <label for="datanasc">Data de Nascimento</label><br>
+                <input type="date" id="datanasc" name="datanasc" required><br>
+            
+                <label for="cpf">CPF</label><br>
+                <input type="text" id="cpf" name="cpf" maxlength="12" required><br>
+               
+                <label for="celular">Celular</label><br>
+                <input type="text" id="celular" name="celular" maxlength="12" required><br>
+            
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" maxlength="29" required><br>
+            
+                <label for="username">Nome de Usuário</label><br>
+                <input type="text" id="username" name="username" maxlength="19" required><br>
+            
+                <label for="senha">Senha</label><br>
+                <input type="password" id="senha" name="senha" maxlength="255" required><br><br>
+            
+                <button type="submit">Cadastrar</button>
+            </form>
+            <a href="login.html" style="position:relative;top:0.5vw;">Login</a>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                $('#signin').on('submit', function(event) {
+                    event.preventDefault();
+
+                    var formData = $(this).serialize();
+
+                    $.ajax({
+                        url: 'cadastro.php',
+                        type: 'POST',
+                        data: formData,
+                        dataType: 'json',  
+                        success: function(response) {
+                            if (response.success) {
+                                alert('Usuário cadastrado com sucesso!');
+                                $('#signin')[0].reset();
+                                //$('#error-message').html('');//debug
+                            } else {
+                                $('#error-message').html(response.error);
+                            }
+                        },
+                        error: function() {
+                            $('#error-message').html('Erro no servidor. Olhe os logs.');
+                        }
+                    });
+                });
+            });
+        </script>
+
+        <footer>
+            <p>&copy; Site da  Disciplina SI401</p>
+        </footer>
+    </body>
+</html>

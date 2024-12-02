@@ -1,0 +1,83 @@
+.divcentral {
+    position: relative;
+    width: 100%; 
+    height: 40vw; 
+    padding: 2vw; 
+    border: 1px solid rgba(105, 168, 240, 0.1);
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+#divcentral-rank {
+    background-image: url("img/boom.gif"), url("img/boom.gif"), url("img/boom.gif"), url("img/boom.gif"), url("img/estrela.png"), url("img/stripes.jpg");
+    background-size: 150px, 150px, 150px, 150px, 190px, cover;
+    background-repeat: no-repeat;
+    background-position: 0 0, 0 100%, 100% 0%, 100% 100%, 51% 0, center; 
+}
+
+.divcentral h2{
+    position: absolute;
+    text-align: center;
+    top: 40px;
+    left: 46%;
+    font-size: 2vw;
+}
+
+.quadro-ranking {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    height: 70%;
+    border: 3px solid black;
+}
+
+/* #aside-rank {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    right:0.5%;
+    top:1%;
+    border:1px solid black;
+    background-color: whitesmoke;
+    opacity: 0.6;
+}    */
+
+#tabela-ranking {
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    background: linear-gradient(to bottom, rgb(169, 169, 150), rgb(238, 238, 171), rgb(169, 169, 150));
+}   
+
+#icone-rank1 {
+    background-image: url("img/medalha1.png"); 
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;    
+}
+
+#icone-rank2 {
+    background-image: url("img/medalha2.png"); 
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;    
+}
+
+#icone-rank3 {
+    background-image: url("img/medalha3.png"); 
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;    
+}   
+
+.num-tabela-rank {
+    position: relative;
+    left: 3.5%;
+}
+
+.num-tabela-rank-10 {
+    position: relative;
+    left: 3.0%;
+}

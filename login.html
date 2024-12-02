@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page:</title>
+    <link rel="stylesheet" href="stylesheets/loginstyle.css">
+    <link rel="shortcut icon" href="Img/GUII.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Campo Minado - Zona 401</h1> 
+    </header>
+    
+    <div class="formDiv" style="left:42vw; height:15vw;top:8vw;">
+        <h1>Login</h1>
+
+        <!-- Div para exibir mensagens de erro ou sucesso -->
+        <div id="error-message" style="color: red; font-weight: bold;"></div>
+
+        <form id="login">
+            <label for="username">Nome de Usuário</label><br>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="senha">Senha</label><br>
+            <input type="password" id="senha" name="senha" required><br><br>
+
+            <button type="submit">Entrar</button><br><br>
+            <a href="cadastro.html">Cadastrar-se</a>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; Site da Disciplina SI401</p>
+    </footer>
+
+    <script>
+        $(document).ready(function() {
+            $('#login').on('submit', function(event) {
+                event.preventDefault();
+
+                var formData = $(this).serialize();
+
+                $.ajax({
+                    url: 'login.php', 
+                    type: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            alert(response.message);
+                            window.location.href = "play-game.php"; // Redireciona para a página de jogo
+                        } else {
+                            $('#error-message').html(response.error);
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        $('#error-message').html('Erro no servidor. Verifique os logs');
+                        console.error('Erro:', textStatus, errorThrown);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

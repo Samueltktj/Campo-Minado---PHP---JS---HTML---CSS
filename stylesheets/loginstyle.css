@@ -1,0 +1,75 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(Img/backg.gif);
+    background-size: 120%;
+}
+
+footer {
+    font-size: 0.8vw;
+    background-color: #333;
+    color: white;
+    text-align:center ;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    overflow: hidden;
+}
+
+header {
+    background-color: #333;
+    color: rgb(248, 231, 248);  
+    height: 6vw;
+    font-size: 1.4vw;
+    overflow: hidden;
+    text-align: center;
+}
+
+input{
+    width:15vw;
+    font-size:1.5vw;
+    border: black solid 0.1vw;
+    border-radius:1vw;
+}
+
+button{
+    font-size: 2vw;
+    text-decoration: none;
+    color: white;
+    background-color:rgb(99, 0, 0);
+    border: black solid 0.1vw;
+    border-radius:0.5vw;
+    text-shadow: white 0.1vw 0 0.5vw;
+    padding:0.1vw;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    background-color:rgb(99, 0, 0);
+    border: black solid 0.1vw;
+    border-radius:0.5vw;
+    padding:0.1vw;
+}
+
+.formDiv{
+    padding:1vw;
+    position:relative;
+    display: inline-table;
+    font-size:1.4vw;
+    font-weight: bold;
+    height:34vw;
+    width:2vw;
+    border: black solid 0.1vw;
+    border-radius:5vw;
+    padding-bottom:1.5vw;
+    background-image: url(img/fireball.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color:black;
+    color:rgb(245, 0, 0);
+    text-shadow: white 0.1vw 0 0.5vw;
+    text-align:center;
+}
